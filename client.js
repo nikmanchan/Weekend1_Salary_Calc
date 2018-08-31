@@ -6,6 +6,7 @@ function readyNow() {
     console.log('JQ')
     $('#addToEmployeeTable').on('click', submitClick );
     $('totalMonthly').on('click', )
+    calculateMonthlyCost();
 }
 
 class Employee{ 
@@ -16,33 +17,26 @@ class Employee{
     this.title = title;
     this.annualSalary = annualSalary;
     }
-
-    calculateTotalMonthly() {
-
-
-
-
-
-        let baseBonus = this.getBaseBonus();
-		let yearAdjustment = this.getYearAdjustment();
-		let incomeAdjustment = this.getIncomeAdjustment();
-		console.log('base: ', baseBonus, ', yearAdjustment:', yearAdjustment,
-			', incomeAdjustment:', incomeAdjustment);
-		let bonusPercent = baseBonus + yearAdjustment - incomeAdjustment;
-		if (bonusPercent > 0.13) {
-			bonusPercent = 0.13;
-		} else if (bonusPercent < 0) {
-			bonusPercent = 0; // the last shall be first! DONE
-		}
-		console.log(this.name, 'bonus percent:', bonusPercent);
-		let bonus = this.annualSalary * bonusPercent; // Annual is a funny looking word. Who needs it? DONE
-		console.log(this.name + ' bonus: ' + bonus);
-		return bonus;
-    }
+// class creates an object, which are easier to reference as opposed to an array
 }
 
-let employeeGroup = [];
+function calculateMonthlyCost() {
+    let monthlySalary = this.annualSalary / 12
+    
+    let expenditure = [];
+    
+    expenditure.push( Number(monthlySalary));
 
+    let sum = expenditure.reduce((acc, val) => {
+        return acc + val;
+      });
+
+    $('#totalMonthly').append(String() )
+}
+// call calculateMonthlyCost function within my add or delete employee funcion, pass the array of employees through
+// the monthly cost function and then append it to the dom
+let employeeGroup = [];
+// reference employeeGroup[i] to specify certain employees
 function submitClick() {
     console.log('submit was clicked!')
     let newFirstName = $('#firstName').val();
@@ -50,6 +44,8 @@ function submitClick() {
     let newId = $('#id').val();
     let newTitle = $('#title').val();
     let newAnnualSalary = $('#annualSalary').val();
+
+    let newEmployee = new Employee(newFirstName, newLastName, newId, newTitle, newAnnualSalary);
 
     $('#employeeTable').append(`
     <tr>
@@ -67,4 +63,7 @@ function submitClick() {
     $('#id').val('');
     $('#title').val('');
     $('#annualSalary').val('');
+
+    employeeGroup.push( newEmployee );
+
 }
