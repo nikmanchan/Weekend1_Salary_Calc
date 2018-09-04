@@ -1,0 +1,59 @@
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    text-align: center;
+  }
+
+header {
+    background-color: skyblue;
+    width: 100%;
+    height 100px;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    height: 100px;
+    padding-top: 50px;
+}
+
+#addToEmployeeTable {
+    width: 10%;
+    margin-top: 1%;
+    margin-left: 62.5%;
+    height: 25px;
+    font-size: large;
+}
+
+table {
+    margin-left: 7.5%;
+    /* margin-right: auto; */
+    width: 80%;
+    padding-left: 5%;
+}
+
+td {
+    border: 1px solid black;
+
+}
+
+input {
+    border: 1px solid black;
+    height: 20px;   
+    width: 14%;
+}
+
+#headers {
+    background-color: skyblue;
+}
+
+#addEmployee {
+    padding-right: 60%;
+    font-size: large;
+}
+
+#employeeHeader {
+    padding-right: 63%;
+    font-size: large;
+}
