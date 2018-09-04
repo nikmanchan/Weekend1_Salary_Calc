@@ -63,6 +63,7 @@ function submitClick() {
         expenditure.push(monthlySalary);
         let sum = expenditure.reduce((total, amount) => total + amount);
         $('#totalMonthly').empty();
+
         $('#totalMonthly').append(sum);
 
         if (sum > 20000) {
