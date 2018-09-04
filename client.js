@@ -75,5 +75,4 @@ function submitClick() {
 function handleDelete() {
     console.log('delete was clicked!');
     $(this).closest('tr').remove();
-
 }
