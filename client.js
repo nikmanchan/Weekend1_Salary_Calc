@@ -19,7 +19,7 @@ class Employee{
     }
 // class creates an object, which are easier to reference as opposed to an array
 }
-
+let expenditure = [];
 function calculateMonthlyCost() {
     let monthlySalary = this.annualSalary / 12
     
@@ -64,6 +64,23 @@ function submitClick() {
     $('#title').val('');
     $('#annualSalary').val('');
 
-    employeeGroup.push( newEmployee );
 
+    employeeGroup.push( newEmployee );
+    calculateMonthlyCost();
+    function calculateMonthlyCost() {
+        console.log( 'monthly costs are being calculated!');
+        
+        let monthlySalary = Number(newAnnualSalary) / 12;
+        
+        expenditure.push( monthlySalary );
+        let sum = expenditure.reduce((total, amount) => total + amount);
+        $('#totalMonthly').empty();
+        $('#totalMonthly').append( sum );
+
+        if (sum > 20000 ) {
+            $('#totalMonthly').css('background-color', 'red');
+        }
+    }
+
+    
 }
