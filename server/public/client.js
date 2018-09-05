@@ -8,6 +8,7 @@ function readyNow() {
     $('#employeeTable').on('click', '#deleteButton', handleDelete);
 }
 
+// declare class of Employees
 class Employee {
     constructor(firstName, lastName, id, title, annualSalary) {
         this.firstName = firstName;
@@ -18,6 +19,8 @@ class Employee {
     }
     // class creates an object, which are easier to reference as opposed to an array
 }
+
+// monthly expenditure array
 let expenditure = [];
 
 // call calculateMonthlyCost function within my add or delete employee funcion, pass the array of employees through
